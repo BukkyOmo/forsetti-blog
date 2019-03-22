@@ -4,12 +4,16 @@
   "description": "a blog",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test nyc mocha --exit --require @babel/register --timeout 60000 ./server/test/**/*.js",
+    "test": "cross-env NODE_ENV=test nyc mocha --exit --require @babel/register --timeout 60000 ./server/test/**/*.spec.js",
     "start": "npm run build && node server/index.js",
     "start:dev": "cross-env NODE_ENV=development nodemon --exec babel-node server/index.js",
     "build": "babel server --out-dir dist",
     "serve": "node dist/index.js",
-    "clean": "rm -r dist"
+    "clean": "rm -r dist",
+    "pretest": "cross-env NODE_ENV=test npm run migrate:undo && cross-env NODE_ENV=test npm run migrate && cross-env NODE_ENV=test npm run seed",
+    "migrate": "node_modules/.bin/sequelize db:migrate",
+    "seed": "node_modules/.bin/sequelize db:seed:all",
+    "migrate:undo": "node_modules/.bin/sequelize db:migrate:undo:all"
   },
   "repository": {
     "type": "git",
@@ -25,9 +29,15 @@
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "mocha": "^6.0.2",
-    "nyc": "^13.3.0"
+    "nyc": "^13.3.0",
+    "path": "^0.12.7",
+    "pg": "^7.9.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^5.1.0",
+    "sequelize-cli": "^5.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
