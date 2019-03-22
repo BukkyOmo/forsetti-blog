@@ -1,0 +1,31 @@
+{
+  "name": "forsetti-blog",
+  "version": "1.0.0",
+  "description": "a blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BukkyOmo/forsetti-blog.git"
+  },
+  "author": "forsetti-team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BukkyOmo/forsetti-blog/issues"
+  },
+  "homepage": "https://github.com/BukkyOmo/forsetti-blog#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "nodemon": "^1.18.10"
+  }
+}
