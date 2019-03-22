@@ -7,7 +7,7 @@ cache:
 services:
     - "postgres"
 before_script:
-  - "psql -c 'create database travis;' -U postgres"
+  - "psql -c 'create database forsetti_test;' -U postgres"
   - npm run pretest
 script:
   - npm ci
