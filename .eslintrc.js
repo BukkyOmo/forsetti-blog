@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    mocha: true
   },
   extends: 'airbnb-base',
   globals: {
@@ -14,6 +15,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "no-console":0
+    "no-console":0,
+    "no-unused-vars": 0
   },
 };
