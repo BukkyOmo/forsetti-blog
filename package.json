@@ -4,7 +4,7 @@
   "description": "a blog",
   "main": "index.js",
   "scripts": {
-    "test": "jshint server/index.js",
+    "test": "cross-env NODE_ENV=test nyc mocha --exit --require @babel/register --timeout 60000 ./server/test/**/*.js",
     "start": "npm run build && node server/index.js",
     "start:dev": "cross-env NODE_ENV=development nodemon --exec babel-node server/index.js",
     "build": "babel server --out-dir dist",
@@ -23,7 +23,11 @@
   "homepage": "https://github.com/BukkyOmo/forsetti-blog#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "express": "^4.16.4",
+    "mocha": "^6.0.2",
+    "nyc": "^13.3.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
