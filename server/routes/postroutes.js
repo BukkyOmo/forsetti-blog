@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import PostController from '../controllers';
+import { PostController } from '../controllers';
 import { idValidator, tryCatch } from '../middlewares';
 
 const { deletePost } = PostController;

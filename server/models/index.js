@@ -9,6 +9,7 @@ const config = configSetup[env];
 const db = {};
 
 let sequelize;
+/* istanbul ignore next */
 if (config.url) {
   sequelize = new Sequelize(process.env.DATABASE_URL, config);
 } else {
