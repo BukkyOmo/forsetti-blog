@@ -1,4 +1,5 @@
 /* eslint-disable func-names */
+import bcrypt from 'bcrypt';
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
@@ -9,11 +10,11 @@ module.exports = (sequelize, DataTypes) => {
       unique: true,
       primaryKey: true,
     },
-    firstName: {
+    firstname: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    lastName: {
+    lastname: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -26,11 +27,17 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
   }, {});
+  /* istanbul ignore next */
   User.associate = function (models) {
     User.hasMany(models.Posts, {
       foreignKey: 'userId',
       as: 'Posts',
     });
   };
+  User.beforeCreate((user, options) => {
+    const salt = bcrypt.genSaltSync();
+    // eslint-disable-next-line no-param-reassign
+    user.password = bcrypt.hashSync(user.password, salt);
+  });
   return User;
 };

@@ -1,4 +1,5 @@
 module.exports = {
+  // eslint-disable-next-line arrow-body-style
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Users', {
       id: {
@@ -32,7 +33,5 @@ module.exports = {
       },
     });
   },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Users');
-  }
+  down: (queryInterface, Sequelize) => queryInterface.dropTable('Users'),
 };
