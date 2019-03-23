@@ -1,3 +1,4 @@
 import idValidator from './idvalidator';
+import tryCatch from './tryCatchWrapper';
 
-export default idValidator;
+export { idValidator, tryCatch };
