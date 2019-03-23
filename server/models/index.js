@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Sequelize from 'sequelize';
-import configSetup from '../config/database';
+import configSetup from '../config/config';
 
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV;
