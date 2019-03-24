@@ -1,5 +1,5 @@
 import idValidator from './idvalidator';
-import tryCatch from './tryCatchWrapper';
 import userValidator from './userValidator';
+import createPostValidator from './createPostValidator';
 
-export { idValidator, tryCatch, userValidator };
+export { idValidator, userValidator, createPostValidator };

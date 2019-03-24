@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { UserController } from '../controllers';
-import { tryCatch, userValidator } from '../middlewares';
+import { userValidator } from '../middlewares';
+import { tryCatch } from '../helpers';
 
 const { createUser } = UserController;
 

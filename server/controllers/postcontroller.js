@@ -22,4 +22,20 @@ export default class PostController {
 
     return res.status(200).json({ status: 200, message: 'Post deleted successfully.', data: [] });
   }
+
+  /**
+   * @description Creates a post
+   * @param  {object} req - The request object
+   * @param  {object} res - The response object
+   * @returns {array} an empty array
+   */
+
+  static async createPost(req, res) {
+    const { title, body } = req.body;
+    const post = await Post.create({
+      title,
+      body,
+    });
+    return res.status(201).json({ status: 201, message: 'Post created successfully', data: post });
+  }
 }
