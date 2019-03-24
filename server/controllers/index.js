@@ -1,3 +1,7 @@
 import PostController from './postcontroller';
+import UserController from './userController';
 
-export default PostController;
+export {
+  PostController,
+  UserController,
+};
