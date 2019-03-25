@@ -22,4 +22,19 @@ export default class PostController {
 
     return res.status(200).json({ status: 200, message: 'Post deleted successfully.', data: [] });
   }
+
+  /**
+   * @description Deletes a post
+   * @param  {object} req - The request object
+   * @param  {object} res - The response object
+   * @returns {array} an empty array
+   */
+  static async getAllPost(req, res) {
+    const allPost = await Post.findAll({
+      attributes: ['id', 'title', 'body'],
+    });
+    // if (!findPost) return res.status(400).json({ status: 404, error: 'No post available' });
+
+    return res.status(200).json({ status: 200, message: 'Successfully retrieved posts.', data: allPost });
+  }
 }
