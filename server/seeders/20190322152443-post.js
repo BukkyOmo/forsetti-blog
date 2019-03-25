@@ -15,6 +15,16 @@ module.exports = {
       id: 'a7201c6a-b026-4117-932a-852f6b5c0a4f',
       title: 'The Third bane',
       body: 'This is the story of the very final bane',
+    },
+    {
+      id: '1862d707-6afd-442e-a72e-267cf15d84db',
+      title: 'The fourth bane',
+      body: 'This is the story of the fourth bane',
+    },
+    {
+      id: '1862d707-6afd-442e-a72e-267cf15d84dc',
+      title: 'The fifth bane',
+      body: 'This is the story of the fifth bane',
     }], {}),
 
 

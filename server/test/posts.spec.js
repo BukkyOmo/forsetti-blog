@@ -30,4 +30,15 @@ describe('Posts Routes', () => {
       expect(res.body).to.have.property('data');
     });
   });
+
+  describe('GET /posts', () => {
+    it('should get all available posts', async () => {
+      const res = await chai.request(app)
+        .get('/api/v1/posts');
+
+      expect(res).to.have.status(200);
+      expect(res.body.message).to.be.equal('Successfully retrieved posts.');
+      expect(res.body).to.have.property('data');
+    });
+  });
 });
